@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#09090a">
+  <meta name="description" content="The public home of Protocol 7 and the Protocol Dice Engine.">
+  <meta property="og:title" content="Joshua Arquitt Games">
+  <meta property="og:description" content="Choose your protocol.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jnarquitt.github.io/">
+  <meta property="og:image" content="https://jnarquitt.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Joshua Arquitt Games">
+  <meta name="twitter:description" content="Choose your protocol.">
+  <meta name="twitter:image" content="https://jnarquitt.github.io/og.png">
+  <title>Joshua Arquitt Games</title>
+  <style>
+:root{--night:#09090a;--panel:#131214;--ink:#f5eee5;--muted:#aaa0a0;--red:#b52d43;--gold:#d6a04a;--line:#443438}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit}
+main{position:relative;min-height:100vh;overflow:hidden;background:radial-gradient(circle at 78% 8%,rgba(181,45,67,.15),transparent 30rem),linear-gradient(145deg,#080809,#100b0d 55%,#080809)}
+.grid-field{position:absolute;inset:0;pointer-events:none;opacity:.23;background-image:linear-gradient(rgba(214,160,74,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(214,160,74,.08) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,#000 0,transparent 74%)}
+.masthead,.hero,.project-grid,footer{position:relative;width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.masthead{height:98px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(214,160,74,.24)}
+.identity{display:flex;align-items:center;gap:14px;text-decoration:none}.identity-mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--gold);font:900 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold)}
+.identity>span:last-child{display:flex;flex-direction:column;gap:3px}.identity b{font:900 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em}.identity small{font-size:9px;letter-spacing:.25em;color:var(--muted)}
+.status{font:800 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;color:#c4b9b8}.status i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:9px;background:#63bf89;box-shadow:0 0 13px #63bf89}
+.hero{min-height:430px;display:flex;align-items:center;justify-content:space-between;padding:66px 0 54px}.hero-copy{position:relative;z-index:1}.eyebrow{font:900 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.26em;color:var(--gold)}
+h1{margin:23px 0 24px;font:900 clamp(62px,9vw,116px)/.78 Georgia,serif;letter-spacing:-.065em}h1 em{color:var(--red);font-weight:400}.hero p{max-width:610px;margin:0;color:#c9bfc0;font-size:17px;line-height:1.75}
+.sigil{position:relative;width:280px;height:280px;display:grid;place-items:center;border:1px solid rgba(214,160,74,.45);border-radius:50%;box-shadow:0 0 0 30px rgba(214,160,74,.04),0 0 0 60px rgba(214,160,74,.025);font-family:Georgia,serif}.sigil:before,.sigil:after{content:"";position:absolute;background:rgba(214,160,74,.42)}.sigil:before{width:1px;height:130%}.sigil:after{height:1px;width:130%}.sigil span,.sigil b{position:absolute;font-size:52px}.sigil span{left:55px;color:var(--red)}.sigil b{right:43px;color:var(--gold)}.sigil i{width:62px;height:62px;border:1px solid rgba(214,160,74,.5);transform:rotate(45deg)}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-bottom:72px}.project-card{position:relative;min-height:480px;display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--line);background:linear-gradient(155deg,rgba(30,22,25,.98),rgba(15,13,14,.98));overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.project-card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--red)}.project-card.dice:before{background:linear-gradient(90deg,var(--gold),var(--red))}.project-card:hover,.project-card:focus-visible{transform:translateY(-5px);border-color:rgba(214,160,74,.66);box-shadow:0 24px 70px rgba(0,0,0,.4)}.project-card:focus-visible{outline:3px solid rgba(214,160,74,.45);outline-offset:3px}
+.card-index{display:flex;align-items:center;gap:18px;padding:28px 30px;border-bottom:1px solid var(--line)}.card-index span{font:900 30px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold)}.p7 .card-index span{color:#e34860}.card-index small{font:800 9px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.16em;color:#b9adaf}
+.card-copy{padding:38px 34px 30px}.card-copy h2{margin:0;font:900 clamp(38px,5vw,60px)/.95 Georgia,serif;letter-spacing:-.05em}.card-copy h3{margin:17px 0;color:var(--gold);font:800 12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em}.p7 .card-copy h3{color:#f07183}.card-copy p{margin:0;color:#c5babb;line-height:1.68;font-size:15px}.card-copy ul{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0 0;padding:0;list-style:none}.card-copy li{padding:7px 9px;border:1px solid #4e383e;background:#171114;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#cdbfc0}
+.card-action{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding:22px 30px;border-top:1px solid var(--line);font:900 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em}.card-action span{color:var(--gold)}.p7 .card-action span{color:#f07183}.card-action b{font-size:22px}
+footer{display:flex;justify-content:space-between;gap:20px;padding:28px 0 46px;border-top:1px solid rgba(214,160,74,.22);color:#796f70;font:800 9px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em}footer b{color:#9f9294}
+@media(max-width:800px){.masthead,.hero,.project-grid,footer{width:min(100% - 28px,620px)}.masthead{height:80px}.status{display:none}.hero{min-height:400px;padding:58px 0}.hero h1{font-size:68px}.hero p{font-size:15px}.sigil{position:absolute;right:-110px;opacity:.22}.project-grid{grid-template-columns:1fr}.project-card{min-height:440px}.card-copy{padding:32px 25px}.card-index,.card-action{padding-inline:24px}footer{flex-direction:column}}
+@media(max-width:420px){.hero h1{font-size:58px}.identity-mark{width:36px;height:36px}.identity b{font-size:11px}.project-card{min-height:460px}.card-copy h2{font-size:43px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <div class="grid-field" aria-hidden="true"></div>
+  <header class="masthead">
+    <a class="identity" href="#top" aria-label="Joshua Arquitt Games home">
+      <span class="identity-mark">JA</span>
+      <span><b>JOSHUA ARQUITT</b><small>GAMES + SYSTEMS</small></span>
+    </a>
+    <span class="status"><i></i> PUBLIC PLAYTEST LIBRARY</span>
+  </header>
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <span class="eyebrow">TWO WAYS TO PLAY</span>
+      <h1>Choose your<br><em>protocol.</em></h1>
+      <p>One permanent doorway to the current public editions of Protocol 7 and the Protocol Dice Engine.</p>
+    </div>
+    <div class="sigil" aria-hidden="true"><span>7</span><i></i><b>∞</b></div>
+  </section>
+  <section class="project-grid" aria-label="Available game projects">
+    <a class="project-card p7" href="https://jnarquitt.github.io/protocol-7/">
+      <div class="card-index"><span>07</span><small>A complete roleplaying game</small></div>
+      <div class="card-copy">
+        <h2>Protocol 7</h2>
+        <h3>Time intelligence. Covert action. One chance to change what comes next.</h3>
+        <p>Enter the world of Aletheia and the Vectors. Build an agent, read the current rulebook, and access the latest public adventures from one launch page.</p>
+        <ul><li>Interactive character app</li><li>Current rulebook</li><li>The Ash Ledger</li></ul>
+      </div>
+      <div class="card-action"><span>ENTER PROTOCOL 7</span><b>↗</b></div>
+    </a>
+    <a class="project-card dice" href="https://jnarquitt.github.io/protocol-dice-engine/">
+      <div class="card-index"><span>∞</span><small>A setting-agnostic rules engine</small></div>
+      <div class="card-copy">
+        <h2>Protocol Dice Engine</h2>
+        <h3>Any world. One protocol.</h3>
+        <p>Explore the classless core behind transparent dice pools, standalone Talents, and modern-occult magic—or build a character and start rolling immediately.</p>
+        <ul><li>Interactive rules guide</li><li>Character and play app</li><li>Printable edition</li></ul>
+      </div>
+      <div class="card-action"><span>OPEN DICE ENGINE</span><b>↗</b></div>
+    </a>
+  </section>
+  <footer><span>INDEPENDENT TABLETOP ROLEPLAYING PROJECTS</span><b>THE LATEST PUBLIC RELEASES ALWAYS LIVE HERE.</b></footer>
+</main>
+</body>
+</html>
