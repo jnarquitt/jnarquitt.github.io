@@ -1,4 +1,4 @@
-# Joshua Arquitt Games
+# Jade Lion Studios
 
 This repository provides one permanent public doorway to two tabletop roleplaying projects:
 
