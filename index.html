@@ -1,1 +1,153 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jade Lion Studios — Project Library</title><style>body{margin:0;background:#0b110e;color:#f4efe3;font-family:Arial,sans-serif}.wrap{width:min(1120px,calc(100% - 2rem));margin:auto}header{padding:4rem 0 2rem;text-align:center}h1{font-size:clamp(2.7rem,8vw,5.5rem);line-height:.95;margin:.5rem 0}.k{color:#d8b766;font-weight:900;letter-spacing:.13em}.lead{color:#b8c2b9;max-width:760px;margin:auto;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;padding:1rem 0 4rem}.card{display:flex;flex-direction:column;min-height:260px;padding:1.3rem;background:#17231c;border:1px solid #314638;border-radius:16px}.card h2{font-family:Georgia,serif;margin:.5rem 0}.card p{color:#b8c2b9;line-height:1.5}.tag{align-self:flex-start;padding:.2rem .55rem;border-radius:999px;background:#244d35;color:#a9f4c5;font-size:.75rem;font-weight:900}.btn{display:inline-flex;justify-content:center;align-items:center;min-height:48px;margin-top:auto;padding:.65rem .9rem;background:#55d28a;color:#07110b;text-decoration:none;border-radius:10px;font-weight:900}.secondary{margin-top:.55rem;background:transparent;color:#f4efe3;border:1px solid #314638}</style></head><body><header class="wrap"><div class="k">JADE LION STUDIOS · PROJECT LIBRARY</div><h1>One doorway.<br>Every world.</h1><p class="lead">Bookmark this page. It is the stable starting point for the current public builds and review pages for Jade Lion Studios projects.</p></header><main class="wrap"><div class="grid"><article class="card"><span class="tag">ACTIVE · v0.187</span><h2>Protocol 7</h2><p>Time-travel science-fiction RPG: rules, Vector app, rulebook, and The Continuance Files Adventure Path.</p><a class="btn" href="https://jnarquitt.github.io/protocol-7/">Open Protocol 7</a><a class="btn secondary" href="https://jnarquitt.github.io/protocol-7/continuance-files/current.html">Current Adventure Path</a></article><article class="card"><span class="tag">PLAYTEST</span><h2>Protocol Dice Engine</h2><p>Portable core dice system, interactive rules, app, and printable materials.</p><a class="btn" href="https://jnarquitt.github.io/protocol-dice-engine/">Open Dice Engine</a></article><article class="card"><span class="tag">TABLE READY</span><h2>Vecna: Murder House Guide</h2><p>Focused Dungeon Master field guide and table reference.</p><a class="btn" href="https://jnarquitt.github.io/vecna-murder-house-guide/">Open Guide</a></article></div></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Personal website of Joshua Arquitt — Learning & Development professional, instructional designer, game designer, fiction writer, and community leader.">
+  <meta name="theme-color" content="#102538">
+  <title>Joshua Arquitt | Professional, Writer & Game Designer</title>
+  <style>
+    :root{
+      --ink:#17212b;--muted:#5c6975;--paper:#f4f7f9;--card:#fff;
+      --navy:#102538;--navy2:#183d5b;--blue:#2b6d96;--gold:#c18a2d;
+      --line:#dce4ea;--soft:#eef4f7;--shadow:0 18px 42px rgba(16,37,56,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.55}
+    a{color:inherit}
+    .shell{width:min(1120px,calc(100% - 2rem));margin:auto}
+    .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-bottom:5px solid var(--gold)}
+    .hero-inner{padding:4.2rem 0 3rem;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:2rem;align-items:end}
+    .eyebrow{font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;color:#f1c66e}
+    h1{font-size:clamp(3rem,8vw,6rem);line-height:.92;margin:.5rem 0 .8rem;letter-spacing:-.05em}
+    .tagline{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:760px;color:#dbe8f2;margin:0}
+    .intro{margin-top:1rem;color:#ecf3f8;max-width:760px}
+    .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.7rem 1rem;border-radius:999px;text-decoration:none;font-weight:850;border:1px solid rgba(255,255,255,.35)}
+    .btn.primary{background:#fff;color:var(--navy);border-color:#fff}
+    .btn.secondary{color:#fff;background:transparent}
+    .quick-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:1.15rem}
+    .quick-card strong{display:block;color:#f1c66e;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.2rem}
+    .quick-card p{margin:.35rem 0 0;color:#eef4f8}
+    nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+    .nav{display:flex;gap:.4rem;overflow-x:auto;padding:.55rem 0}
+    .nav a{white-space:nowrap;text-decoration:none;padding:.55rem .75rem;border-radius:999px;font-weight:750;color:#354858}
+    .nav a:hover{background:var(--soft);color:var(--navy)}
+    main{padding:1.4rem 0 4rem}
+    section{margin-top:2rem;scroll-margin-top:78px}
+    .section-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:.9rem}
+    .section-head h2{margin:0;font-size:1.65rem;letter-spacing:-.02em}
+    .section-head p{margin:0;color:var(--muted);max-width:650px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.2rem;box-shadow:0 4px 18px rgba(16,37,56,.04);display:flex;flex-direction:column;min-height:220px}
+    .card .kicker{font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+    .card h3{margin:.35rem 0 .5rem;color:var(--navy);font-size:1.2rem}
+    .card p{margin:0 0 1rem;color:var(--muted)}
+    .card a{margin-top:auto;color:var(--blue);font-weight:850;text-decoration:none}
+    .card a:hover{text-decoration:underline}
+    .about{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.25rem}
+    .panel h2,.panel h3{margin-top:0;color:var(--navy)}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+    .stat{background:var(--soft);border-radius:14px;padding:.9rem}
+    .stat .n{font-size:1.6rem;font-weight:900;color:var(--navy);line-height:1}
+    .stat .l{font-size:.8rem;color:var(--muted);margin-top:.3rem;font-weight:700}
+    .contact{background:var(--navy);color:#fff;border-radius:20px;padding:1.5rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+    .contact h2{margin:0 0 .25rem}
+    .contact p{margin:0;color:#d9e7f2}
+    .contact-links{display:flex;flex-wrap:wrap;gap:.6rem}
+    footer{text-align:center;color:var(--muted);font-size:.84rem;padding:1.2rem 0 0}
+    @media(max-width:900px){.hero-inner,.about{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.shell{width:min(100% - 1rem,1120px)}.hero-inner{padding:2.8rem 0 2.2rem}.grid,.stats{grid-template-columns:1fr}.section-head,.contact{align-items:flex-start;flex-direction:column}.actions .btn{flex:1 1 160px}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell hero-inner">
+      <div>
+        <div class="eyebrow">Personal Website</div>
+        <h1>Joshua Arquitt</h1>
+        <p class="tagline">Learning &amp; Development professional, instructional designer, game designer, fiction writer, and community leader.</p>
+        <p class="intro">My work spans training and e-learning, system implementation, customer and technical support, tabletop game design, fiction, volunteer leadership, and community event coordination.</p>
+        <div class="actions">
+          <a class="btn primary" href="/resume/">View Interactive Résumé</a>
+          <a class="btn secondary" href="mailto:jnarquitt@gmail.com">Contact Me</a>
+        </div>
+      </div>
+      <aside class="quick-card">
+        <strong>Current Focus</strong>
+        <p>Primarily part-time remote, hybrid, or office-based opportunities in Learning &amp; Development, instructional design, LMS support, implementation training, support operations, community programs, or related creative work.</p>
+      </aside>
+    </div>
+  </header>
+
+  <nav>
+    <div class="shell nav">
+      <a href="#about">About</a>
+      <a href="#professional">Professional</a>
+      <a href="#creative">Creative Work</a>
+      <a href="#community">Community</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="shell">
+    <section id="about" class="about">
+      <article class="panel">
+        <h2>About Me</h2>
+        <p>I have more than 25 years of professional experience across Learning &amp; Development, customer support, technical support, account services, leadership, and training operations. My background includes more than a decade of online learning and LMS work, major system-transition training, and extensive experience turning complex information into clear, usable instruction.</p>
+        <p>I am also an independent game designer and fiction writer, with a long history of volunteer leadership, event coordination, and live facilitation.</p>
+      </article>
+      <aside class="panel">
+        <h3>Career Snapshot</h3>
+        <div class="stats">
+          <div class="stat"><div class="n">60+</div><div class="l">E-learning courses designed</div></div>
+          <div class="stat"><div class="n">14 yrs</div><div class="l">Learning &amp; Development</div></div>
+          <div class="stat"><div class="n">30+ yrs</div><div class="l">Volunteer &amp; community leadership</div></div>
+          <div class="stat"><div class="n">Top 1%</div><div class="l">T-Mobile Winner's Circle</div></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="professional">
+      <div class="section-head"><div><h2>Professional</h2><p>Career history, learning design, training leadership, implementation work, and support experience.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="kicker">Career</div><h3>Interactive Résumé</h3><p>Explore my professional history by role focus, including Learning &amp; Development, LMS, support, community leadership, and creative work.</p><a href="/resume/">Open résumé →</a></article>
+        <article class="card"><div class="kicker">Learning &amp; Development</div><h3>Training & Instructional Design</h3><p>Fourteen years in Learning &amp; Development, including e-learning, curriculum design, LMS administration, facilitation, and implementation training.</p><a href="/resume/#experience">View experience →</a></article>
+        <article class="card"><div class="kicker">Implementation</div><h3>Facets & ASO Training</h3><p>Lead trainer across Boeing and Washington State ASO/self-funded benefits administration transitions, including implementation support and training advisory work in Oregon.</p><a href="/resume/#achievements">View highlights →</a></article>
+      </div>
+    </section>
+
+    <section id="creative">
+      <div class="section-head"><div><h2>Creative Work</h2><p>Independent game design, fiction, digital publishing, and public project work.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="kicker">Game Design</div><h3>Protocol 7</h3><p>Original science-fiction tabletop RPG project with interactive tools, rules, adventure material, and ongoing playtest development.</p><a href="https://jnarquitt.github.io/protocol-7/">Open Protocol 7 →</a></article>
+        <article class="card"><div class="kicker">Game Systems</div><h3>Protocol Dice Engine</h3><p>A portable tabletop rules engine with interactive reference tools and supporting digital materials.</p><a href="https://jnarquitt.github.io/protocol-dice-engine/">Open Dice Engine →</a></article>
+        <article class="card"><div class="kicker">Tabletop Support</div><h3>Vecna: Murder House Guide</h3><p>A focused Dungeon Master field guide and table reference project.</p><a href="https://jnarquitt.github.io/vecna-murder-house-guide/">Open guide →</a></article>
+      </div>
+    </section>
+
+    <section id="community">
+      <div class="section-head"><div><h2>Community & Volunteer Leadership</h2><p>Decades of volunteer service, youth engagement, event coordination, organized play, and community support.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="kicker">Youth & Community</div><h3>Boys & Girls Clubs of Skagit County</h3><p>Volunteer service since 2010, with frequent ongoing involvement and a particular focus on supporting teens.</p><a href="/resume/#volunteer">View volunteer history →</a></article>
+        <article class="card"><div class="kicker">Fundraising</div><h3>Relay For Life</h3><p>Organized Relay For Life activity at Regence BlueShield for six years, coordinating participation and event support.</p><a href="/resume/#volunteer">View volunteer history →</a></article>
+        <article class="card"><div class="kicker">Organized Play</div><h3>D&D Adventurers League</h3><p>Puget Sound regional volunteer coordinator, convention organizer, Dungeon Master, Game Master, judge, and new-system instructor.</p><a href="/resume/#experience">View leadership experience →</a></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div><h2>Get in touch</h2><p>Sedro-Woolley, Washington • Open primarily to part-time opportunities.</p></div>
+        <div class="contact-links">
+          <a class="btn primary" href="mailto:jnarquitt@gmail.com">jnarquitt@gmail.com</a>
+          <a class="btn secondary" href="tel:+13605400525">360-540-0525</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>Joshua Arquitt • Personal website • GitHub Pages</footer>
+  </main>
+</body>
+</html>
